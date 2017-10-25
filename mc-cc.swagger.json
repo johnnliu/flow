@@ -1,0 +1,118 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "MC Code Connection",
+    "version": "1.0.0",
+    "title": "mc-cc-api"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "attack": {
+      "get": {
+        "summary": "attack",
+        "description": "attack?direction=forward",
+        "operationId": "Attack",
+        "parameters": [
+          {
+            "name": "direction",
+            "in": "query",
+            "default": "forward",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "forward",
+              "back",
+              "left",
+              "right",
+              "up",
+              "down"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "move": {
+      "get": {
+        "summary": "move",
+        "description": "move?direction=forward",
+        "operationId": "Move",
+        "parameters": [
+          {
+            "name": "direction",
+            "in": "query",
+            "default": "forward",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "forward",
+              "back",
+              "left",
+              "right",
+              "up",
+              "down"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "place": {
+      "get": {
+        "summary": "place",
+        "description": "place?slotNum=1&direction=forward",
+        "operationId": "Place",
+        "parameters": [
+          {
+            "name": "slotNum",
+            "in": "query",
+            "default": 1,
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "default": "forward",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "forward",
+              "back",
+              "left",
+              "right",
+              "up",
+              "down"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
