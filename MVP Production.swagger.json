@@ -33,7 +33,8 @@
       "name": "Ocp-Apim-Subscription-Key",
       "in": "header",
       "default": "ae2edf7-YOURKEYHERE",
-      "x-ms-visibility": "internal"
+      "x-ms-visibility": "internal",
+      "required": true
     }
   },
   "paths": {
