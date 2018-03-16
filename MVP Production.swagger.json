@@ -44,9 +44,11 @@
         "description": "Gets a list of Contribution areas grouped by Award Names",
         "operationId": "GetContributionAreas",
         "x-ms-visibility": "advanced",
-        "parameters": [{
-          "$ref": "#/parameters/apiKeyHeader"
-        }],
+        "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          }
+        ],
         "responses": {
           "200": {
             "description": "IEnumerable ContributionAreaViewModel"
@@ -66,9 +68,11 @@
         "description": "Gets a list of Contribution Types",
         "operationId": "GetContributionTypes",
         "x-ms-visibility": "advanced",
-        "parameters": [{
-          "$ref": "#/parameters/apiKeyHeader"
-        }],
+        "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          }
+        ],
         "responses": {
           "200": {
             "description": "IOrderedEnumerable object."
@@ -81,13 +85,16 @@
           "text/xml"
         ]
       }
-    },    
+    },
     "/api/contributions/{offset}/{limit}": {
       "get": {
         "summary": "GetContributions",
         "description": "Supports pagination",
         "operationId": "GetContributions",
         "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          },
           {
             "name": "offset",
             "in": "path",
@@ -126,11 +133,14 @@
         "operationId": "GetContributionById",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "Format - int32. ContributionId",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "id",
+          "in": "path",
+          "description": "Format - int32. ContributionId",
+          "required": true,
+          "type": "integer"
           }
         ],
         "responses": {
@@ -150,18 +160,21 @@
       }
     },
     "/api/contributions": {
-      "put": {        
+      "put": {
         "summary": "PutContribution",
         "description": "Updates a Contribution item",
         "operationId": "PutContribution",
         "parameters": [
           {
-            "name": "contributionsModel",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/ContributionsModel"
-            },
-            "description": "ContributionsModel object"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "contributionsModel",
+          "in": "body",
+          "schema": {
+            "$ref": "#/definitions/ContributionsModel"
+          },
+          "description": "ContributionsModel object"
           }
         ],
         "consumes": [
@@ -244,11 +257,14 @@
         "operationId": "DeleteContribution",
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
-            "description": "Format - int32. Contribution ID (model PrivateSiteId value)",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "id",
+          "in": "query",
+          "description": "Format - int32. Contribution ID (model PrivateSiteId value)",
+          "required": true,
+          "type": "integer"
           }
         ],
         "responses": {
@@ -278,6 +294,11 @@
         "summary": "GetOnlineIdentities",
         "description": "Retricted to the current user",
         "operationId": "GetOnlineIdentities",
+        "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK. IEnumberable object.",
@@ -299,12 +320,15 @@
         "operationId": "PutOnlineIdentity",
         "parameters": [
           {
-            "name": "onlineIdentityViewModel",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/OnlineIdentityViewModel"
-            },
-            "description": "OnlineIdentityViewModel model"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "onlineIdentityViewModel",
+          "in": "body",
+          "schema": {
+            "$ref": "#/definitions/OnlineIdentityViewModel"
+          },
+          "description": "OnlineIdentityViewModel model"
           }
         ],
         "consumes": [
@@ -335,12 +359,15 @@
         "operationId": "PostOnlineIdentity",
         "parameters": [
           {
-            "name": "onlineIdentityViewModel",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/OnlineIdentityViewModel"
-            },
-            "description": "OnlineIdentityViewModel object"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "onlineIdentityViewModel",
+          "in": "body",
+          "schema": {
+            "$ref": "#/definitions/OnlineIdentityViewModel"
+          },
+          "description": "OnlineIdentityViewModel object"
           }
         ],
         "consumes": [
@@ -380,11 +407,14 @@
         "operationId": "DeleteOnlineIdentity",
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
-            "description": "Format - int32. The items identity id (PrivateSiteId)",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "id",
+          "in": "query",
+          "description": "Format - int32. The items identity id (PrivateSiteId)",
+          "required": true,
+          "type": "integer"
           }
         ],
         "responses": {
@@ -419,11 +449,14 @@
         "operationId": "GetOnlineIdentitiesByNominationsId",
         "parameters": [
           {
-            "name": "nominationsId",
-            "in": "path",
-            "description": "Format - uuid. Guid nominationsId",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "nominationsId",
+          "in": "path",
+          "description": "Format - uuid. Guid nominationsId",
+          "required": true,
+          "type": "string"
           }
         ],
         "responses": {
@@ -449,11 +482,14 @@
         "operationId": "GetOnlineIdentityById",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "Format - int32. id of item to be retrieved",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "id",
+          "in": "path",
+          "description": "Format - int32. id of item to be retrieved",
+          "required": true,
+          "type": "integer"
           }
         ],
         "responses": {
@@ -479,9 +515,10 @@
         "operationId": "GetMVPProfile",
         "x-ms-visibility": "important",
         "parameters": [
-        {
+          {
           "$ref": "#/parameters/apiKeyHeader"
-        }],
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -505,11 +542,14 @@
         "operationId": "GetMVPProfileById",
         "parameters": [
           {
-            "name": "mvpid",
-            "in": "path",
-            "description": "Users mvpid",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/apiKeyHeader"
+          },
+          {
+          "name": "mvpid",
+          "in": "path",
+          "description": "Users mvpid",
+          "required": true,
+          "type": "string"
           }
         ],
         "responses": {
@@ -533,6 +573,11 @@
         "summary": "GetMVPProfileImage",
         "description": "Gets the MVP Profile Image",
         "operationId": "GetMVPProfileImage",
+        "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -551,6 +596,11 @@
         "summary": "GetSharingPreferences",
         "description": "Gets a list of Sharing Preference / Visibility Types for Contributions",
         "operationId": "GetSharingPreferences",
+        "parameters": [
+          {
+            "$ref": "#/parameters/apiKeyHeader"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK. IEnumerable object.",
