@@ -1,0 +1,12 @@
+<div id="fifa-games">
+
+</div>
+<script>
+
+window.fetch('/Shared%20Documents/fifa-2018-fixtures.html').then(function(response){
+  return response.text();
+}).then(function(text) {
+  document.getElementById('fifa-games').innerHTML = text;
+});
+
+</script>
