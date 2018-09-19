@@ -13,6 +13,7 @@
 
     var $style = $('<style>'+
                    '.msla-token-recommendation-v2 .msla-token-recommendation-pull-right .msla-token-picker-pin {left: -400px; top: inherit; width: 600px; }'+
+                   '.msla-token-recommendation-v2 .msla-token-recommendation-pull-right .msla-token-picker-pin .msla-token-picker-popup { width: inherit; } '+
                    '.msla-token-recommendation-v2 .msla-token-recommendation-pull-right .msla-token-picker-pin .msla-token-picker-popup .msla-token-picker { width: inherit; } '+
                    '.msla-token-recommendation-v2 .msla-token-picker .msla-token-picker-expression .msla-token-picker-expression-editor .msla-expression-editor {height: 106px;}'+
                    '.msla-intellisense-editor>div {height: 96px;}'+
