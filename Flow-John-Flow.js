@@ -52,4 +52,23 @@
     }
     initMonaco();
 
+    $(window).keydown(function(event) {
+
+        if (!event.ctrlKey && !event.metaKey) return true;
+
+        switch (String.fromCharCode(event.which).toLowerCase()) {
+            case 's':
+                event.preventDefault();
+                $("button.ms-Button[aria-label=Save]").trigger("click");
+                return false;
+                break;
+            case 'g':
+                event.preventDefault();
+                $("button.ms-Button[aria-label=Test]").trigger("click");
+                return false;
+                break;
+        }
+        return true;
+    });    
+    
 })(window.jQuery);
