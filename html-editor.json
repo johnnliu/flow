@@ -12,7 +12,6 @@
     "paths": {
         "/post": {
             "post": {
-                "security": [],
                 "summary": "Compose HTML",
                 "operationId": "postHTML",
                 "parameters": [
@@ -25,26 +24,16 @@
                         }
                     }
                 ],
-                "consumes": [
-                    "application/json",
-                    "text/json",
-                    "application/xml",
-                    "text/xml",
-                    "application/x-www-form-urlencoded"
-                ],
                 "responses": {
                     "200": {
                         "description": "OK"
-                    },
-                    "500": {
-                        "description": "InternalServerError"
                     }
                 },
                 "produces": [
-                    "application/json",
-                    "text/json",
-                    "application/xml",
-                    "text/xml"
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
                 ],
                 "deprecated": false,
                 "x-ms-visibility": "important",
